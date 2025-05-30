@@ -11,14 +11,41 @@
 <body>
     <main>
         <header class="side-bar">
-            <div class="modos">           
-            <i class="bi bi-sun" style="font-size: 2rem;color: white;"></i>
-            </div>
+           <!-- Botão com ícone do Bootstrap -->
+            <button onclick="toggleDarkMode()" id="toggleModeBtn" class="btn btn-dark" style="border: none; background: transparent;">
+                <i id="modeIcon" class="bi bi-sun" style="font-size: 2rem; color: white;text-align: center;margin-left: 15px;"></i>
+            </button>
+
+            <script>
+            function toggleDarkMode() {
+                const body = document.body;
+                const icon = document.getElementById("modeIcon");
+                 document.body.classList.toggle("dark-mode");
+  
+
+  icon.className = isDark ? "bi bi-sun-fill side-bar-icons" : "bi bi-moon-fill side-bar-icons";
+
+                // Alterna o modo escuro
+                body.classList.toggle("dark-mode");
+
+                // Troca o ícone (sol ↔ lua)
+                if (body.classList.contains("dark-mode")) {
+                    icon.classList.remove("bi-sun");
+                    icon.classList.add("bi-moon");
+                } else {
+                    icon.classList.remove("bi-moon");
+                    icon.classList.add("bi-sun");
+                }
+            }
+            </script>
+
+
+            
             <nav>
                 <ul>
-                    <li> <a href="#home"><img class="side-bar-icons" src="imgs/icons8-casa-64.png" alt="home"> </a></li>
-                    <li><a href="#sobre"> <img class="side-bar-icons" src="imgs/icons8-pessoa-64.png" alt="sobre"></a></li>
-                    <li> <a href="#projs"><img class="side-bar-icons" src="imgs/icons8-projetos-80.png" alt="projetos"></a></li>
+                    <li><a href="#home"><i class="bi bi-house side-bar-icons"></i></a></li>
+                    <li><a href="#sobre"><i class="bi bi-person side-bar-icons"></i></a></li>
+                    <li><a href="#projs"><i class="bi bi-folder side-bar-icons"></i></a></li>
                 </ul>
             </nav>
         </header>
@@ -62,7 +89,7 @@
                     
                      </div>
                     
-                     <div data-aos="fade-left" class="project project3">
+                     <!-- <div data-aos="fade-left" class="project project3">
                         <img id="elCalaverito" src="imgs/lgCalaveritoVertical.png"
                             alt="Logo do nosso cliente/ elCalaverito">
                         <div class="containerIcons">
@@ -74,7 +101,7 @@
                             </a>
                         </div>
                     
-                     </div>
+                     </div> -->
                 </div>
           
         </section>
